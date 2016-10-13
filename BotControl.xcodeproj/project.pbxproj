@@ -9,11 +9,15 @@
 /* Begin PBXBuildFile section */
 		59C18E871DB00A0800DED5E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C18E861DB00A0800DED5E2 /* AppDelegate.swift */; };
 		59C18E891DB00A0800DED5E2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C18E881DB00A0800DED5E2 /* ViewController.swift */; };
-		59C18E8C1DB00A0800DED5E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59C18E8A1DB00A0800DED5E2 /* Main.storyboard */; };
 		59C18E8E1DB00A0900DED5E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59C18E8D1DB00A0900DED5E2 /* Assets.xcassets */; };
 		59C18E911DB00A0900DED5E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59C18E8F1DB00A0900DED5E2 /* LaunchScreen.storyboard */; };
 		59C18E9C1DB00A0900DED5E2 /* BotControlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C18E9B1DB00A0900DED5E2 /* BotControlTests.swift */; };
 		59C18EA71DB00A0900DED5E2 /* BotControlUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C18EA61DB00A0900DED5E2 /* BotControlUITests.swift */; };
+		59C18EB61DB00A6500DED5E2 /* BTDiscovery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C18EB51DB00A6500DED5E2 /* BTDiscovery.swift */; };
+		59C18EB81DB00A6E00DED5E2 /* BTService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C18EB71DB00A6E00DED5E2 /* BTService.swift */; };
+		59C18EBA1DB00A8C00DED5E2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59C18EB91DB00A8C00DED5E2 /* Images.xcassets */; };
+		59C18EBC1DB00A9900DED5E2 /* ViewControllerButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C18EBB1DB00A9900DED5E2 /* ViewControllerButtons.swift */; };
+		59C18EBE1DB00ADB00DED5E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59C18EBD1DB00ADB00DED5E2 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +41,6 @@
 		59C18E831DB00A0800DED5E2 /* BotControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BotControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59C18E861DB00A0800DED5E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		59C18E881DB00A0800DED5E2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		59C18E8B1DB00A0800DED5E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		59C18E8D1DB00A0900DED5E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		59C18E901DB00A0900DED5E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		59C18E921DB00A0900DED5E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +50,11 @@
 		59C18EA21DB00A0900DED5E2 /* BotControlUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BotControlUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		59C18EA61DB00A0900DED5E2 /* BotControlUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotControlUITests.swift; sourceTree = "<group>"; };
 		59C18EA81DB00A0900DED5E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		59C18EB51DB00A6500DED5E2 /* BTDiscovery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTDiscovery.swift; sourceTree = "<group>"; };
+		59C18EB71DB00A6E00DED5E2 /* BTService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTService.swift; sourceTree = "<group>"; };
+		59C18EB91DB00A8C00DED5E2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		59C18EBB1DB00A9900DED5E2 /* ViewControllerButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerButtons.swift; sourceTree = "<group>"; };
+		59C18EBD1DB00ADB00DED5E2 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,10 +105,13 @@
 		59C18E851DB00A0800DED5E2 /* BotControl */ = {
 			isa = PBXGroup;
 			children = (
+				59C18EB41DB00A4800DED5E2 /* Classes */,
 				59C18E861DB00A0800DED5E2 /* AppDelegate.swift */,
 				59C18E881DB00A0800DED5E2 /* ViewController.swift */,
-				59C18E8A1DB00A0800DED5E2 /* Main.storyboard */,
+				59C18EBB1DB00A9900DED5E2 /* ViewControllerButtons.swift */,
+				59C18EBD1DB00ADB00DED5E2 /* Main.storyboard */,
 				59C18E8D1DB00A0900DED5E2 /* Assets.xcassets */,
+				59C18EB91DB00A8C00DED5E2 /* Images.xcassets */,
 				59C18E8F1DB00A0900DED5E2 /* LaunchScreen.storyboard */,
 				59C18E921DB00A0900DED5E2 /* Info.plist */,
 			);
@@ -123,6 +134,15 @@
 				59C18EA81DB00A0900DED5E2 /* Info.plist */,
 			);
 			path = BotControlUITests;
+			sourceTree = "<group>";
+		};
+		59C18EB41DB00A4800DED5E2 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				59C18EB51DB00A6500DED5E2 /* BTDiscovery.swift */,
+				59C18EB71DB00A6E00DED5E2 /* BTService.swift */,
+			);
+			name = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,8 +256,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				59C18E911DB00A0900DED5E2 /* LaunchScreen.storyboard in Resources */,
+				59C18EBA1DB00A8C00DED5E2 /* Images.xcassets in Resources */,
 				59C18E8E1DB00A0900DED5E2 /* Assets.xcassets in Resources */,
-				59C18E8C1DB00A0800DED5E2 /* Main.storyboard in Resources */,
+				59C18EBE1DB00ADB00DED5E2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,7 +284,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				59C18E891DB00A0800DED5E2 /* ViewController.swift in Sources */,
+				59C18EB81DB00A6E00DED5E2 /* BTService.swift in Sources */,
+				59C18EB61DB00A6500DED5E2 /* BTDiscovery.swift in Sources */,
 				59C18E871DB00A0800DED5E2 /* AppDelegate.swift in Sources */,
+				59C18EBC1DB00A9900DED5E2 /* ViewControllerButtons.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,14 +323,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		59C18E8A1DB00A0800DED5E2 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				59C18E8B1DB00A0800DED5E2 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		59C18E8F1DB00A0900DED5E2 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
