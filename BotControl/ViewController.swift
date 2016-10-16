@@ -80,7 +80,8 @@ class ViewController: UIViewController {
                 
                 if(self.dataIn.contains("\r\n")){
                     var dataArray = self.dataIn.components(separatedBy: "\r\n")
-                    let tString = self.handleData(dataArray[0]).fixedFractionDigits(digits: 3)
+                    let angle = self.handleData(dataArray[0])
+                    let tString = angle.fixedFractionDigits(digits: 3)
                     self.textBox.text = tString
                     
                     print(tString)
