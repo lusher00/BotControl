@@ -29,17 +29,18 @@ class ViewController: UIViewController {
         self.myScrollView.contentSize = CGSize(width: 300, height: 720)
         self.myScrollView.contentOffset = CGPoint(x: (300 - self.myScrollView.frame.width) / 2,
                                                   y: (720 - self.myScrollView.frame.height) / 2)
-        
+        /*
         print(self.myScrollView.frame.width)
         print(self.myScrollView.frame.height)
         print(self.myScrollView.contentSize)
         print(self.myScrollView.contentOffset)
-
+        */
+        
         // Watch Bluetooth connection
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.connectionChanged(_:)), name: NSNotification.Name(rawValue: BLEServiceChangedStatusNotification), object: nil)
         
         // Start the Bluetooth discovery process
-        btDiscoverySharedInstance
+        //btDiscoverySharedInstance
     }
     
     deinit {
