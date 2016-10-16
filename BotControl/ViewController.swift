@@ -16,9 +16,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var textBox: UITextField!
     @IBOutlet weak var connectionStatusLabel : UILabel!
     var myImageView: UIImageView!
+    var imgViewBezel: UIImageView!
+    var imgViewWings: UIImageView!
     @IBOutlet var myScrollView: UIScrollView!
     
-    
+
     
     var timerTXDelay: Timer?
     var allowTX = true
@@ -28,47 +30,42 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        #if false
+        let imgHorizon = UIImage.init(named:"horizon")!
+        let imgBezel = UIImage.init(named:"bezel_transparent")!
+        let imgWings = UIImage.init(named:"wings_transparent")!
+
             
-            let view: UIView = UIView.init(frame: CGRect(x: 0, y: 0, width: 500, height: 500))
-            let scrollView = UIScrollView.init(frame: view.bounds)
-            view.addSubview(scrollView)
-            let backImage: UIImage = fromColor(UIColor.red, size: CGSize(width: 1000, height: 1000))
-            let backImageView: UIImageView = UIImageView.init(image: backImage)
-            scrollView.addSubview(backImageView)
-            scrollView.contentSize = CGSize.init(width: backImage.size.width, height: backImage.size.height)
-            
-            let frontImage: UIImage = fromColor(UIColor.blue, size: CGSize(width: 100, height: 100))
-            let layer: CALayer = CALayer.init()
-            layer.frame = CGRect.init(x: view.center.x - 50, y: view.center.y - 50, width: 100, height: 100)
-            layer.contents = frontImage.cgImage
-            view.layer.addSublayer(layer)
-            
-            self.view.addSubview(view)
-            
-        #else
-            
-            let image = UIImage.init(named:"horizon")!
-            
-            self.myImageView = UIImageView.init()
-            self.myImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height))
-            self.myImageView.contentMode = UIViewContentMode.center
-            self.myImageView.clipsToBounds = true
-            self.myImageView.image = image
-            
-            self.myScrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: image.size.width, height: image.size.width))
-            self.myScrollView.contentSize = CGSize(width: image.size.width, height: image.size.height)
-            self.myScrollView.center = self.view.center
-            // 20 pts = 5deg or 1deg = 4pts
-            self.myScrollView.contentOffset = CGPoint(x: (image.size.width - self.myScrollView.frame.width) / 2,
-                                                      y: (image.size.height - self.myScrollView.frame.height) / 2)
-            // Put a border around the scroll view
-            self.myScrollView.layer.borderWidth = 25
-            self.myScrollView.layer.borderColor = UIColor.darkGray.cgColor
-            self.myScrollView.addSubview(self.myImageView)
-            self.view.addSubview(self.myScrollView)
-            
-        #endif
+        self.myImageView = UIImageView.init()
+        self.myImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: imgBezel.size.width, height: imgHorizon.size.height))
+        self.myImageView.contentMode = UIViewContentMode.center
+        self.myImageView.clipsToBounds = true
+        self.myImageView.image = imgHorizon
+
+        self.imgViewBezel = UIImageView.init()
+        self.imgViewBezel = UIImageView(frame: CGRect(x: 0, y: 0, width: imgBezel.size.width, height: imgBezel.size.height))
+        self.imgViewBezel.contentMode = UIViewContentMode.center
+        self.imgViewBezel.clipsToBounds = true
+        self.imgViewBezel.image = imgBezel
+        self.imgViewBezel.center = self.view.center
+        
+        self.imgViewWings = UIImageView.init()
+        self.imgViewWings = UIImageView(frame: CGRect(x: 0, y: 0, width: imgBezel.size.width, height: imgBezel.size.height))
+        self.imgViewWings.contentMode = UIViewContentMode.center
+        self.imgViewWings.clipsToBounds = true
+        self.imgViewWings.image = imgWings
+        self.imgViewWings.center = self.view.center
+
+        self.myScrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: imgBezel.size.width, height: imgBezel.size.width))
+        self.myScrollView.contentSize = CGSize(width: imgBezel.size.width, height: imgHorizon.size.height)
+        self.myScrollView.center = self.view.center
+        // 20 pts = 5deg or 1deg = 4pts
+        self.myScrollView.contentOffset = CGPoint(x: (imgHorizon.size.width - self.myScrollView.frame.width) / 2,
+                                                  y: (imgHorizon.size.height - self.myScrollView.frame.height) / 2)
+        
+        self.myScrollView.addSubview(self.myImageView)
+        self.view.addSubview(self.myScrollView)
+        self.view.addSubview(imgViewBezel)
+        self.view.addSubview(imgViewWings)
         
         self.connectionStatusLabel.text = "Disconnected"
         self.connectionStatusLabel.textColor = UIColor.red
