@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="C6K-6W-zz9">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="C6K-6W-zz9">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -10,7 +10,7 @@
         <!--Robot Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="Arduino_Servo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="BotControl" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -19,6 +19,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" bounces="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UWI-9K-P8b">
+                                <frame key="frameInset" minX="37" minY="183" width="300" height="300"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="horizon" translatesAutoresizingMaskIntoConstraints="NO" id="DY4-s2-1sD">
+                                        <rect key="frame" x="0.0" y="-274" width="300" height="720"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                    </imageView>
+                                </subviews>
+                            </scrollView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bezel_transparent" translatesAutoresizingMaskIntoConstraints="NO" id="1xA-n0-ymU">
+                                <frame key="frameInset" minX="37" minY="183" width="300" height="300"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tdv-X9-1Ct">
                                 <frame key="frameInset" minX="279" minY="72" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -38,6 +53,10 @@
                                     <segue destination="qiS-W4-xGk" kind="show" id="P5P-iW-IvK"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wings_transparent" translatesAutoresizingMaskIntoConstraints="NO" id="RAU-VV-auC">
+                                <frame key="frameInset" minX="37" minY="183" width="300" height="300"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eAo-XR-gYp">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="RUM-t7-odh"/>
@@ -63,17 +82,18 @@
                     <navigationItem key="navigationItem" title="Robot Controller" id="am2-fh-N05"/>
                     <connections>
                         <outlet property="connectionStatusLabel" destination="tdv-X9-1Ct" id="RpK-7c-FGr"/>
+                        <outlet property="myScrollView" destination="UWI-9K-P8b" id="sSR-e7-BCc"/>
                         <outlet property="textBox" destination="4Y7-Mv-b2N" id="3r4-Rd-mgy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1257" y="383"/>
+            <point key="canvasLocation" x="1256.8" y="382.75862068965517"/>
         </scene>
         <!--View Controller Buttons-->
         <scene sceneID="XT6-91-3Jg">
             <objects>
-                <viewController id="qiS-W4-xGk" customClass="ViewControllerButtons" customModule="Arduino_Servo" sceneMemberID="viewController">
+                <viewController id="qiS-W4-xGk" customClass="ViewControllerButtons" customModule="BotControl" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3ev-ir-mRQ"/>
                         <viewControllerLayoutGuide type="bottom" id="EhB-7w-dKd"/>
@@ -136,4 +156,9 @@
             <point key="canvasLocation" x="445" y="383"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bezel_transparent" width="300" height="300"/>
+        <image name="horizon" width="350" height="720"/>
+        <image name="wings_transparent" width="150" height="50"/>
+    </resources>
 </document>
