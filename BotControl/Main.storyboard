@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Hello World" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Y7-Mv-b2N">
-                                <frame key="frameInset" minX="20" minY="138.66666666666666" width="560" height="30"/>
+                                <frame key="frameInset" minX="20" minY="100" width="374" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -61,6 +61,29 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="b5l-Yc-aUS">
+                                <frame key="frameInset" minX="57" minY="180" width="94" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="ang_step:" destination="qiS-W4-xGk" eventType="valueChanged" id="Etm-BJ-yTE"/>
+                                    <action selector="angleStepperPressed:" destination="vXZ-lx-hvc" eventType="valueChanged" id="80t-md-U4f"/>
+                                </connections>
+                            </stepper>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vcO-mk-BCD">
+                                <frame key="frameInset" minX="159" minY="180" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LFb-g7-IvK">
+                                <frame key="frameInset" minX="285" minY="180" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="WRITE"/>
+                                <connections>
+                                    <action selector="send:" destination="qiS-W4-xGk" eventType="touchUpInside" id="pei-yn-lXF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -75,6 +98,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="Robot Controller" id="am2-fh-N05"/>
                     <connections>
+                        <outlet property="UITextFieldAngle" destination="vcO-mk-BCD" id="Jif-Kk-HDf"/>
+                        <outlet property="UIstepperAngle" destination="b5l-Yc-aUS" id="nbq-n5-YTb"/>
+                        <outlet property="btnAngleWrite" destination="LFb-g7-IvK" id="T6B-Js-h3a"/>
                         <outlet property="connectionStatusLabel" destination="tdv-X9-1Ct" id="RpK-7c-FGr"/>
                         <outlet property="myScrollView" destination="95p-YY-Fs4" id="Cpe-f9-WrO"/>
                         <outlet property="textBox" destination="4Y7-Mv-b2N" id="3r4-Rd-mgy"/>
@@ -95,35 +121,10 @@
                     <view key="view" contentMode="scaleToFill" id="Bjy-IB-VFm" customClass="View">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="b5l-Yc-aUS">
-                                <frame key="frameInset" minX="16" minY="72" width="94" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="ang_step:" destination="qiS-W4-xGk" eventType="valueChanged" id="Etm-BJ-yTE"/>
-                                </connections>
-                            </stepper>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vcO-mk-BCD">
-                                <frame key="frameInset" minX="118" minY="72" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LFb-g7-IvK">
-                                <frame key="frameInset" minX="313" minY="72" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="send:" destination="qiS-W4-xGk" eventType="touchUpInside" id="pei-yn-lXF"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="ang" destination="vcO-mk-BCD" id="ubt-dV-OLy"/>
-                        <outlet property="ang_stepper" destination="b5l-Yc-aUS" id="AsF-dP-ekf"/>
                         <outlet property="send" destination="LFb-g7-IvK" id="Ilm-Ee-bI2"/>
                     </connections>
                 </viewController>

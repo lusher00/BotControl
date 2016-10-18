@@ -16,12 +16,16 @@ class ViewController: UIViewController {
     @IBOutlet weak var textBox: UITextField!
     @IBOutlet weak var connectionStatusLabel : UILabel!
     @IBOutlet var myScrollView: UIScrollView!
+    @IBOutlet var UIstepperAngle: UIStepper!
+    @IBOutlet var UITextFieldAngle: UITextField!
+    @IBOutlet var btnAngleWrite: UIButton!
 
     
     var timerTXDelay: Timer?
     var allowTX = true
     var lastPosition: UInt8 = 255
     var dataIn = String()
+    var offset: CGFloat = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +33,9 @@ class ViewController: UIViewController {
         self.myScrollView.contentSize = CGSize(width: 300, height: 720)
         self.myScrollView.contentOffset = CGPoint(x: (300 - self.myScrollView.frame.width) / 2,
                                                   y: (720 - self.myScrollView.frame.height) / 2)
+        
+        self.offset = self.myScrollView.contentOffset.y + CGFloat(90*4)
+        
         /*
         print(self.myScrollView.frame.width)
         print(self.myScrollView.frame.height)
@@ -38,9 +45,12 @@ class ViewController: UIViewController {
         
         // Watch Bluetooth connection
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.connectionChanged(_:)), name: NSNotification.Name(rawValue: BLEServiceChangedStatusNotification), object: nil)
-        
+
+        // Watch Bluetooth connection
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.dataReceived(_:)), name: NSNotification.Name(rawValue: BLEDataChangedStatusNotification), object: nil)
+
         // Start the Bluetooth discovery process
-        //btDiscoverySharedInstance
+        btDiscoverySharedInstance
     }
     
     deinit {
@@ -85,8 +95,12 @@ class ViewController: UIViewController {
                     let tString = angle.fixedFractionDigits(digits: 3)
                     self.textBox.text = tString
                     
-                    print(tString)
+                    //print(tString)
                     
+                    self.myScrollView.contentOffset.y = self.offset + CGFloat(angle*4)
+
+                    print(self.myScrollView.contentOffset.y)
+                    print(self.offset)
                     
                     if(dataArray.count > 1)
                     {
@@ -113,6 +127,24 @@ class ViewController: UIViewController {
         }
         
     }
+    
+    func sendData(_ str: String) {
+        
+        // Send position to BLE Shield (if service exists and is connected)
+        if let bleService = btDiscoverySharedInstance.bleService
+        {
+            bleService.writeData(str)
+        }
+    }
+    
+    @IBAction func angleStepperPressed(_ sender: AnyObject) {
+        self.UITextFieldAngle.text = UIstepperAngle.value.fixedFractionDigits(digits: 3)
+        sendData("ANG; \(self.UITextFieldAngle.text)\r\n")
+    }
+    @IBAction func send(_ sender: AnyObject) {
+        sendData("Hello World!")
+    }
+    
 }
 
 
