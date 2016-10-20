@@ -18,6 +18,7 @@
 		59C18EBA1DB00A8C00DED5E2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59C18EB91DB00A8C00DED5E2 /* Images.xcassets */; };
 		59C18EBC1DB00A9900DED5E2 /* ViewControllerButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C18EBB1DB00A9900DED5E2 /* ViewControllerButtons.swift */; };
 		59C18EBE1DB00ADB00DED5E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59C18EBD1DB00ADB00DED5E2 /* Main.storyboard */; };
+		59C18EC31DB95F0800DED5E2 /* ArtificalHorizon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C18EC21DB95F0800DED5E2 /* ArtificalHorizon.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		59C18EB91DB00A8C00DED5E2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		59C18EBB1DB00A9900DED5E2 /* ViewControllerButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerButtons.swift; sourceTree = "<group>"; };
 		59C18EBD1DB00ADB00DED5E2 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		59C18EC21DB95F0800DED5E2 /* ArtificalHorizon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtificalHorizon.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,9 @@
 		59C18E851DB00A0800DED5E2 /* BotControl */ = {
 			isa = PBXGroup;
 			children = (
+				59C18EC11DB95E9C00DED5E2 /* controller */,
+				59C18EC01DB95E9500DED5E2 /* view */,
+				59C18EBF1DB95E8C00DED5E2 /* model */,
 				59C18EB41DB00A4800DED5E2 /* Classes */,
 				59C18E861DB00A0800DED5E2 /* AppDelegate.swift */,
 				59C18E881DB00A0800DED5E2 /* ViewController.swift */,
@@ -143,6 +148,28 @@
 				59C18EB71DB00A6E00DED5E2 /* BTService.swift */,
 			);
 			name = Classes;
+			sourceTree = "<group>";
+		};
+		59C18EBF1DB95E8C00DED5E2 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		59C18EC01DB95E9500DED5E2 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				59C18EC21DB95F0800DED5E2 /* ArtificalHorizon.swift */,
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
+		59C18EC11DB95E9C00DED5E2 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,6 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				59C18E891DB00A0800DED5E2 /* ViewController.swift in Sources */,
+				59C18EC31DB95F0800DED5E2 /* ArtificalHorizon.swift in Sources */,
 				59C18EB81DB00A6E00DED5E2 /* BTService.swift in Sources */,
 				59C18EB61DB00A6500DED5E2 /* BTDiscovery.swift in Sources */,
 				59C18E871DB00A0800DED5E2 /* AppDelegate.swift in Sources */,
@@ -528,6 +556,7 @@
 				59C18EAD1DB00A0900DED5E2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		59C18EAE1DB00A0900DED5E2 /* Build configuration list for PBXNativeTarget "BotControlTests" */ = {
 			isa = XCConfigurationList;
@@ -536,6 +565,7 @@
 				59C18EB01DB00A0900DED5E2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		59C18EB11DB00A0900DED5E2 /* Build configuration list for PBXNativeTarget "BotControlUITests" */ = {
 			isa = XCConfigurationList;
@@ -544,6 +574,7 @@
 				59C18EB31DB00A0900DED5E2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
