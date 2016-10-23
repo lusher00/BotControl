@@ -10,19 +10,31 @@ import UIKit
 
 class ArtificalHorizon: UIView {
 
-    private var imgHorizon : UIImage
-    private var imgBezel : UIImage
-    private var imgWings : UIImage
+    private var imgHorizon : UIImage!
+    private var imgBezel : UIImage!
+    private var imgWings : UIImage!
     
-    private var imgViewHorizon : UIImageView
-    private var imgViewBezel : UIImageView
-    private var imgViewWings : UIImageView
+    private var imgViewHorizon : UIImageView!
+    private var imgViewBezel : UIImageView!
+    private var imgViewWings : UIImageView!
     
-    private var svHorizon : UIScrollView
+    private var svHorizon : UIScrollView!
    
+    private var offsetForZeroAngle : CGFloat!
+    
+    init(frame: CGRect, albumCover: String) {
+        super.init(frame: frame)
+        commonInit()
+    }
     
     required init?(coder aDecoder: NSCoder) {
-        
+        super.init(coder: aDecoder)
+        commonInit()
+    }
+
+    func commonInit(){
+        self.clipsToBounds = true
+
         imgHorizon = UIImage.init(named:"horizon")!
         imgBezel = UIImage.init(named:"bezel_transparent")!
         imgWings = UIImage.init(named:"wings_transparent")!
@@ -33,14 +45,10 @@ class ArtificalHorizon: UIView {
         
         svHorizon = UIScrollView.init()
         
-        super.init(coder: aDecoder)
-        
-        //self.clipsToBounds = true
-        
         imgViewHorizon = UIImageView(frame: CGRect(x: 0, y: 0, width: imgBezel.size.width, height: imgHorizon.size.height))
-        //imgViewHorizon.contentMode = UIViewContentMode.scaleAspectFill
+        imgViewHorizon.contentMode = UIViewContentMode.scaleAspectFill
         imgViewHorizon.clipsToBounds = true
-        //imgViewHorizon.image = imgHorizon
+        imgViewHorizon.image = imgHorizon
         imgViewHorizon.backgroundColor = UIColor.red
         
         imgViewBezel = UIImageView(frame: CGRect(x: 0, y: 0, width: imgBezel.size.width, height: imgBezel.size.height))
@@ -58,21 +66,32 @@ class ArtificalHorizon: UIView {
         svHorizon.contentMode = UIViewContentMode.scaleToFill
         svHorizon.bounces = false
         svHorizon.backgroundColor = UIColor.cyan
-        svHorizon.contentOffset = CGPoint(x: 0, y: 0)
-        //svHorizon.contentOffset = CGPoint(x: (imgBezel.size.width - svHorizon.frame.width) / 2, y: (imgHorizon.size.height - svHorizon.frame.height) / 2)
+        
+        offsetForZeroAngle = CGFloat((imgHorizon.size.height - svHorizon.frame.height) / 2)
+        updateAngle(angle: 10.0)
         
         print(svHorizon.contentOffset)
         print(svHorizon.contentSize)
         print(svHorizon.frame.origin)
         print(imgViewHorizon.frame.size)
         
-//        addSubview(imgViewHorizon)
         svHorizon.addSubview(imgViewHorizon)
         addSubview(svHorizon)
-//        addSubview(imgViewBezel)
-//        addSubview(imgViewWings)
+        addSubview(imgViewBezel)
+        addSubview(imgViewWings)
+
     }
     
+    func updateAngle(angle : Double){
+        svHorizon.contentOffset.y = offsetForZeroAngle + CGFloat(angle * -4.0)
+    }
+    
+ 
+    
+    override func layoutSubviews()
+    {
+        
+    }
     
     /*
     override func intrinsicContentSize() -> CGSize {

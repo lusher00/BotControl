@@ -113,7 +113,7 @@
         <!--View Controller Buttons-->
         <scene sceneID="XT6-91-3Jg">
             <objects>
-                <viewController id="qiS-W4-xGk" customClass="ViewControllerButtons" customModule="BotControl" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="qiS-W4-xGk" customClass="ViewControllerButtons" customModule="BotControl" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3ev-ir-mRQ"/>
                         <viewControllerLayoutGuide type="bottom" id="EhB-7w-dKd"/>

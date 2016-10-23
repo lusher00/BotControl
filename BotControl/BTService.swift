@@ -20,12 +20,14 @@ let BLEDataChangedStatusNotification = "kBLEDataChangedStatusNotification"
 class BTService: NSObject, CBPeripheralDelegate {
     var peripheral: CBPeripheral?
     var positionCharacteristic: CBCharacteristic?
+    var isBluetoothConnected : Bool?
     
     init(initWithPeripheral peripheral: CBPeripheral) {
         super.init()
         
         self.peripheral = peripheral
         self.peripheral?.delegate = self
+        self.isBluetoothConnected = false
     }
     
     deinit {
@@ -43,6 +45,7 @@ class BTService: NSObject, CBPeripheralDelegate {
         
         // Deallocating therefore send notification
         self.sendBTServiceNotificationWithIsBluetoothConnected(false)
+        self.isBluetoothConnected = false
     }
     
     // Mark: - CBPeripheralDelegate
@@ -89,6 +92,7 @@ class BTService: NSObject, CBPeripheralDelegate {
                     
                     // Send notification that Bluetooth is connected and all required characteristics are discovered
                     self.sendBTServiceNotificationWithIsBluetoothConnected(true)
+                    self.isBluetoothConnected = true
                 }
             }
         }

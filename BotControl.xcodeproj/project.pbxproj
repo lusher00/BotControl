@@ -19,6 +19,7 @@
 		59C18EBC1DB00A9900DED5E2 /* ViewControllerButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C18EBB1DB00A9900DED5E2 /* ViewControllerButtons.swift */; };
 		59C18EBE1DB00ADB00DED5E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59C18EBD1DB00ADB00DED5E2 /* Main.storyboard */; };
 		59C18EC31DB95F0800DED5E2 /* ArtificalHorizon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C18EC21DB95F0800DED5E2 /* ArtificalHorizon.swift */; };
+		76B670EB1DBD4AAB00B350DF /* ParameterControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B670EA1DBD4AAB00B350DF /* ParameterControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		59C18EBB1DB00A9900DED5E2 /* ViewControllerButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerButtons.swift; sourceTree = "<group>"; };
 		59C18EBD1DB00ADB00DED5E2 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		59C18EC21DB95F0800DED5E2 /* ArtificalHorizon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtificalHorizon.swift; sourceTree = "<group>"; };
+		76B670EA1DBD4AAB00B350DF /* ParameterControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParameterControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				59C18EC21DB95F0800DED5E2 /* ArtificalHorizon.swift */,
+				76B670EA1DBD4AAB00B350DF /* ParameterControl.swift */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 				59C18EB61DB00A6500DED5E2 /* BTDiscovery.swift in Sources */,
 				59C18E871DB00A0800DED5E2 /* AppDelegate.swift in Sources */,
 				59C18EBC1DB00A9900DED5E2 /* ViewControllerButtons.swift in Sources */,
+				76B670EB1DBD4AAB00B350DF /* ParameterControl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
