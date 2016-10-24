@@ -35,6 +35,10 @@ class ArtificalHorizon: UIView {
     func commonInit(){
         self.clipsToBounds = true
 
+        let screenRect : CGRect  = self.frame.bo
+        let screenWidth : CGFloat  = screenRect.size.width;
+        let screenHeight : CGFloat  = screenRect.size.height;
+        
         imgHorizon = UIImage.init(named:"horizon")!
         imgBezel = UIImage.init(named:"bezel_transparent")!
         imgWings = UIImage.init(named:"wings_transparent")!

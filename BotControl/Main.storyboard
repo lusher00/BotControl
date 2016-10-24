@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,38 +19,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Hello World" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Y7-Mv-b2N">
-                                <frame key="frameInset" minX="20" minY="100" width="374" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lnk-7L-5wX">
-                                <frame key="frameInset" minX="164" minY="617" width="46" height="30"/>
+                                <frame key="frameInset" minX="40" minY="-12" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="qiS-W4-xGk" kind="show" id="P5P-iW-IvK"/>
-                                </connections>
                             </button>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="95p-YY-Fs4">
-                                <frame key="frameInset" minX="57" minY="218" width="300" height="300"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="horizon" translatesAutoresizingMaskIntoConstraints="NO" id="m1X-LJ-b3M">
-                                        <rect key="frame" x="0.0" y="0.0" width="300" height="720"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                </subviews>
-                            </scrollView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bezel_transparent" translatesAutoresizingMaskIntoConstraints="NO" id="Ll7-fx-eX0">
-                                <frame key="frameInset" minX="57" minY="218" width="300" height="300"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wings_transparent" translatesAutoresizingMaskIntoConstraints="NO" id="pCu-rn-etz">
-                                <frame key="frameInset" minX="57" minY="218" width="300" height="300"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eAo-XR-gYp">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="RUM-t7-odh"/>
@@ -61,33 +35,24 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="b5l-Yc-aUS">
-                                <frame key="frameInset" minX="57" minY="180" width="94" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="ang_step:" destination="qiS-W4-xGk" eventType="valueChanged" id="Etm-BJ-yTE"/>
-                                    <action selector="angleStepperPressed:" destination="vXZ-lx-hvc" eventType="valueChanged" id="80t-md-U4f"/>
-                                </connections>
-                            </stepper>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vcO-mk-BCD">
-                                <frame key="frameInset" minX="159" minY="180" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LFb-g7-IvK">
-                                <frame key="frameInset" minX="285" minY="180" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="WRITE"/>
-                                <connections>
-                                    <action selector="send:" destination="qiS-W4-xGk" eventType="touchUpInside" id="pei-yn-lXF"/>
-                                </connections>
-                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="229-L4-dH2" customClass="ArtificalHorizon" customModule="BotControl" customModuleProvider="target">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="414" id="MGD-Kt-Xlt"/>
+                                    <constraint firstAttribute="width" secondItem="229-L4-dH2" secondAttribute="height" multiplier="1:1" id="WXu-Ls-HhW"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="414" id="iW2-Aj-b0b"/>
+                                    <constraint firstAttribute="width" constant="414" id="xU9-Z6-7ZK"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="229-L4-dH2" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="5Zw-7Y-Jxt"/>
+                            <constraint firstAttribute="trailing" secondItem="229-L4-dH2" secondAttribute="trailing" id="7FY-y8-C0I"/>
                             <constraint firstItem="tdv-X9-1Ct" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="Ksi-X3-r4M"/>
+                            <constraint firstItem="229-L4-dH2" firstAttribute="top" secondItem="tdv-X9-1Ct" secondAttribute="bottom" constant="10" id="fZT-co-IW1"/>
+                            <constraint firstItem="tdv-X9-1Ct" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="10" id="ndq-vb-g65"/>
+                            <constraint firstItem="229-L4-dH2" firstAttribute="top" secondItem="tdv-X9-1Ct" secondAttribute="bottom" constant="10" id="qPk-7X-7Zh"/>
                             <constraint firstItem="tdv-X9-1Ct" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="rtT-mE-N3w"/>
                         </constraints>
                         <variation key="default">
@@ -98,52 +63,12 @@
                     </view>
                     <navigationItem key="navigationItem" title="Robot Controller" id="am2-fh-N05"/>
                     <connections>
-                        <outlet property="UITextFieldAngle" destination="vcO-mk-BCD" id="Jif-Kk-HDf"/>
-                        <outlet property="UIstepperAngle" destination="b5l-Yc-aUS" id="nbq-n5-YTb"/>
-                        <outlet property="btnAngleWrite" destination="LFb-g7-IvK" id="T6B-Js-h3a"/>
-                        <outlet property="connectionStatusLabel" destination="tdv-X9-1Ct" id="RpK-7c-FGr"/>
-                        <outlet property="myScrollView" destination="95p-YY-Fs4" id="Cpe-f9-WrO"/>
-                        <outlet property="textBox" destination="4Y7-Mv-b2N" id="3r4-Rd-mgy"/>
+                        <outlet property="connectionStatusLabel" destination="tdv-X9-1Ct" id="0oy-Qi-hMx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1256.521739130435" y="382.33695652173918"/>
-        </scene>
-        <!--View Controller Buttons-->
-        <scene sceneID="XT6-91-3Jg">
-            <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="qiS-W4-xGk" customClass="ViewControllerButtons" customModule="BotControl" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="3ev-ir-mRQ"/>
-                        <viewControllerLayoutGuide type="bottom" id="EhB-7w-dKd"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Bjy-IB-VFm" customClass="View">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="rLg-tA-MSv" customClass="ArtificalHorizon" customModule="BotControl" customModuleProvider="target">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="McR-RU-ASI"/>
-                                    <constraint firstAttribute="height" constant="300" id="jxu-Tj-6da"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="rLg-tA-MSv" firstAttribute="top" secondItem="3ev-ir-mRQ" secondAttribute="bottom" constant="80" id="6Um-6T-Cg2"/>
-                            <constraint firstItem="rLg-tA-MSv" firstAttribute="centerX" secondItem="Bjy-IB-VFm" secondAttribute="centerX" id="MrT-tl-pe1"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="ang" destination="vcO-mk-BCD" id="ubt-dV-OLy"/>
-                        <outlet property="send" destination="LFb-g7-IvK" id="Ilm-Ee-bI2"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bhG-c8-Rh3" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1946" y="384"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="w4G-kT-fb3">
@@ -164,9 +89,4 @@
             <point key="canvasLocation" x="445" y="383"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="bezel_transparent" width="300" height="300"/>
-        <image name="horizon" width="350" height="720"/>
-        <image name="wings_transparent" width="150" height="50"/>
-    </resources>
 </document>

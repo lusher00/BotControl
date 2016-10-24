@@ -13,13 +13,7 @@ let viewControllerSharedInstance = ViewController()
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var textBox: UITextField!
-    @IBOutlet weak var connectionStatusLabel : UILabel!
-    @IBOutlet var myScrollView: UIScrollView!
-    @IBOutlet var UIstepperAngle: UIStepper!
-    @IBOutlet var UITextFieldAngle: UITextField!
-    @IBOutlet var btnAngleWrite: UIButton!
-
+    @IBOutlet var connectionStatusLabel: UILabel!
     
     var timerTXDelay: Timer?
     var allowTX = true
@@ -30,18 +24,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.myScrollView.contentSize = CGSize(width: 300, height: 720)
-        self.myScrollView.contentOffset = CGPoint(x: (300 - self.myScrollView.frame.width) / 2,
-                                                  y: (720 - self.myScrollView.frame.height) / 2)
-        
-        self.offset = self.myScrollView.contentOffset.y + CGFloat(90*4)
-        
-        /*
-        print(self.myScrollView.frame.width)
-        print(self.myScrollView.frame.height)
-        print(self.myScrollView.contentSize)
-        print(self.myScrollView.contentOffset)
-        */
         
         // Watch Bluetooth connection
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.connectionChanged(_:)), name: NSNotification.Name(rawValue: BLEServiceChangedStatusNotification), object: nil)
@@ -93,13 +75,13 @@ class ViewController: UIViewController {
                     var dataArray = self.dataIn.components(separatedBy: "\r\n")
                     let angle = self.handleData(dataArray[0])
                     let tString = angle.fixedFractionDigits(digits: 3)
-                    self.textBox.text = tString
+                    //self.textBox.text = tString
                     
                     //print(tString)
                     
-                    self.myScrollView.contentOffset.y = self.offset + CGFloat(angle*4)
+                    //self.myScrollView.contentOffset.y = self.offset + CGFloat(angle*4)
 
-                    print(self.myScrollView.contentOffset.y)
+                    //print(self.myScrollView.contentOffset.y)
                     print(self.offset)
                     
                     if(dataArray.count > 1)
@@ -137,10 +119,6 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func angleStepperPressed(_ sender: AnyObject) {
-        self.UITextFieldAngle.text = UIstepperAngle.value.fixedFractionDigits(digits: 3)
-        sendData("ANG; \(self.UITextFieldAngle.text)\r\n")
-    }
     @IBAction func send(_ sender: AnyObject) {
         sendData("Hello World!")
     }
