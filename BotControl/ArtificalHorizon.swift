@@ -22,20 +22,27 @@ class ArtificalHorizon: UIView {
    
     private var offsetForZeroAngle : CGFloat!
     
-    init(frame: CGRect, albumCover: String) {
+    private var sf : CGFloat!
+    
+    override init(frame: CGRect) {
         super.init(frame: frame)
-        commonInit()
+        //commonInit()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        commonInit()
+        //commonInit()
     }
 
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        commonInit()
+    }
+    
     func commonInit(){
         self.clipsToBounds = true
 
-        let screenRect : CGRect  = self.frame.bo
+        let screenRect : CGRect  = self.frame
         let screenWidth : CGFloat  = screenRect.size.width;
         let screenHeight : CGFloat  = screenRect.size.height;
         
@@ -49,35 +56,41 @@ class ArtificalHorizon: UIView {
         
         svHorizon = UIScrollView.init()
         
-        imgViewHorizon = UIImageView(frame: CGRect(x: 0, y: 0, width: imgBezel.size.width, height: imgHorizon.size.height))
+        // Figure out how much we need to scale the horizon image
+        sf = screenWidth / imgHorizon.size.width
+        let horizonImgWidth = imgHorizon.size.width * sf
+        let horizonImgHeight = imgHorizon.size.height * sf
+        
+        imgViewHorizon = UIImageView(frame: CGRect(x: 0, y: 0, width: horizonImgWidth, height: horizonImgHeight))
         imgViewHorizon.contentMode = UIViewContentMode.scaleAspectFill
         imgViewHorizon.clipsToBounds = true
         imgViewHorizon.image = imgHorizon
         imgViewHorizon.backgroundColor = UIColor.red
         
-        imgViewBezel = UIImageView(frame: CGRect(x: 0, y: 0, width: imgBezel.size.width, height: imgBezel.size.height))
-        imgViewBezel.contentMode = UIViewContentMode.center
+        imgViewBezel = UIImageView(frame: CGRect(x: 0, y: 0, width: screenWidth, height: screenWidth))
+        imgViewBezel.contentMode = UIViewContentMode.scaleAspectFill
         imgViewBezel.clipsToBounds = true
         imgViewBezel.image = imgBezel
         
-        imgViewWings = UIImageView(frame: CGRect(x: 0, y: 0, width: imgBezel.size.width, height: imgBezel.size.height))
+        imgViewWings = UIImageView(frame: CGRect(x: 0, y: 0, width: screenWidth, height: screenWidth))
         imgViewWings.contentMode = UIViewContentMode.center
         imgViewWings.clipsToBounds = true
         imgViewWings.image = imgWings
         
-        svHorizon = UIScrollView(frame: CGRect(x: 0, y: 0, width: imgBezel.size.width, height: imgBezel.size.width))
-        svHorizon.contentSize = CGSize(width: imgBezel.size.width, height: imgHorizon.size.height)
-        svHorizon.contentMode = UIViewContentMode.scaleToFill
+        svHorizon = UIScrollView(frame: CGRect(x: 0, y: 0, width: screenWidth, height: screenWidth))
+        svHorizon.contentSize = CGSize(width: horizonImgWidth, height: horizonImgHeight)
+        svHorizon.contentMode = UIViewContentMode.scaleAspectFill
         svHorizon.bounces = false
         svHorizon.backgroundColor = UIColor.cyan
         
-        offsetForZeroAngle = CGFloat((imgHorizon.size.height - svHorizon.frame.height) / 2)
+        offsetForZeroAngle = CGFloat((horizonImgHeight - svHorizon.frame.height) / 2)
         updateAngle(angle: 10.0)
         
         print(svHorizon.contentOffset)
         print(svHorizon.contentSize)
         print(svHorizon.frame.origin)
-        print(imgViewHorizon.frame.size)
+        print(imgViewHorizon.frame.origin)
+        print(screenRect)
         
         svHorizon.addSubview(imgViewHorizon)
         addSubview(svHorizon)
@@ -87,15 +100,10 @@ class ArtificalHorizon: UIView {
     }
     
     func updateAngle(angle : Double){
-        svHorizon.contentOffset.y = offsetForZeroAngle + CGFloat(angle * -4.0)
+        svHorizon.contentOffset.y = offsetForZeroAngle + CGFloat(angle * -4.0 * Double(sf))
     }
     
  
-    
-    override func layoutSubviews()
-    {
-        
-    }
     
     /*
     override func intrinsicContentSize() -> CGSize {
