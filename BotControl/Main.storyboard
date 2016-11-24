@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="C6K-6W-zz9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="C6K-6W-zz9">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -15,21 +18,24 @@
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eAo-XR-gYp">
+                                <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="RUM-t7-odh"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tdv-X9-1Ct">
+                                <rect key="frame" x="166.5" y="74" width="42" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="229-L4-dH2" customClass="ArtificalHorizon" customModule="BotControl" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="104.5" width="375" height="207"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="207" id="iW2-Aj-b0b"/>
@@ -40,8 +46,6 @@
                         <constraints>
                             <constraint firstItem="229-L4-dH2" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="5lH-Qq-sGk"/>
                             <constraint firstAttribute="trailing" secondItem="229-L4-dH2" secondAttribute="trailing" id="FCK-0d-uRm"/>
-                            <constraint firstItem="tdv-X9-1Ct" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="Ksi-X3-r4M"/>
-                            <constraint firstItem="229-L4-dH2" firstAttribute="top" secondItem="tdv-X9-1Ct" secondAttribute="bottom" constant="10" id="fZT-co-IW1"/>
                             <constraint firstItem="tdv-X9-1Ct" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="10" id="ndq-vb-g65"/>
                             <constraint firstItem="229-L4-dH2" firstAttribute="top" secondItem="tdv-X9-1Ct" secondAttribute="bottom" constant="10" id="qPk-7X-7Zh"/>
                             <constraint firstItem="tdv-X9-1Ct" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="rtT-mE-N3w"/>
@@ -54,6 +58,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Robot Controller" id="am2-fh-N05"/>
                     <connections>
+                        <outlet property="artificialHorizon" destination="229-L4-dH2" id="Wcr-lP-pc4"/>
                         <outlet property="connectionStatusLabel" destination="tdv-X9-1Ct" id="0oy-Qi-hMx"/>
                     </connections>
                 </viewController>

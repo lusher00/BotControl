@@ -89,11 +89,13 @@ class ArtificalHorizon: UIView {
         offsetForZeroAngle = CGFloat((horizonImgHeight - svHorizon.frame.height) / 2)
         updateAngle(angle: 10.0)
         
+        /*
         print(svHorizon.contentOffset)
         print(svHorizon.contentSize)
         print(svHorizon.frame.origin)
         print(imgViewHorizon.frame.origin)
         print(screenRect)
+        */
         
         svHorizon.addSubview(imgViewHorizon)
         addSubview(svHorizon)

@@ -14,6 +14,7 @@ let viewControllerSharedInstance = ViewController()
 class ViewController: UIViewController {
     
     @IBOutlet var connectionStatusLabel: UILabel!
+    @IBOutlet var artificialHorizon: ArtificalHorizon!
     
     var timerTXDelay: Timer?
     var allowTX = true
@@ -21,7 +22,6 @@ class ViewController: UIViewController {
     var dataIn = String()
     var offset: CGFloat = 0
     
-    var artificialHorizon: UIView!
     var data: Data!
     
     override func viewDidLoad() {
@@ -36,11 +36,7 @@ class ViewController: UIViewController {
 
         // Start the Bluetooth discovery process
         btDiscoverySharedInstance
-        
-        artificialHorizon = ArtificalHorizon()
-        
-        
-        
+
         self.data = Data()
     }
     
@@ -80,9 +76,9 @@ class ViewController: UIViewController {
                 
                 self.data.parse(data: strData)
                 
-                let angle = self.data.getAngle()
+                let angle = self.data.getAngle() + 90
                 
-                artificialHorizon.
+                self.artificialHorizon.updateAngle(angle: angle)
                 
                 let tString = angle.fixedFractionDigits(digits: 3)
                 
