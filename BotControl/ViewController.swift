@@ -21,6 +21,9 @@ class ViewController: UIViewController {
     var dataIn = String()
     var offset: CGFloat = 0
     
+    var artificialHorizon: UIView!
+    var data: Data!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -33,6 +36,12 @@ class ViewController: UIViewController {
 
         // Start the Bluetooth discovery process
         btDiscoverySharedInstance
+        
+        artificialHorizon = ArtificalHorizon()
+        
+        
+        
+        self.data = Data()
     }
     
     deinit {
@@ -67,48 +76,22 @@ class ViewController: UIViewController {
         
         DispatchQueue.main.async(execute: {
             // Set image based on connection status
-            if let data: String = userInfo["data"] {
+            if let strData: String = userInfo["data"] {
                 
-                self.dataIn += data
+                self.data.parse(data: strData)
                 
-                if(self.dataIn.contains("\r\n")){
-                    var dataArray = self.dataIn.components(separatedBy: "\r\n")
-                    let angle = self.handleData(dataArray[0])
-                    let tString = angle.fixedFractionDigits(digits: 3)
-                    //self.textBox.text = tString
-                    
-                    //print(tString)
-                    
-                    //self.myScrollView.contentOffset.y = self.offset + CGFloat(angle*4)
-
-                    //print(self.myScrollView.contentOffset.y)
-                    print(self.offset)
-                    
-                    if(dataArray.count > 1)
-                    {
-                        self.dataIn = dataArray[1]
-                    }
-                    else
-                    {
-                        self.dataIn = ""
-                    }
-                }
+                let angle = self.data.getAngle()
+                
+                artificialHorizon.
+                
+                let tString = angle.fixedFractionDigits(digits: 3)
+                
+                print(tString)
                 
             }
         });
     }
     
-    func handleData(_ data: String) -> Double
-    {
-        let dataArray = data.components(separatedBy: "; ")
-        
-        if let angle = Double(dataArray[2]){
-            return angle
-        } else {
-            return 0.0
-        }
-        
-    }
     
     func sendData(_ str: String) {
         

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		59398FA01DBF919A008C2063 /* data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59398F9F1DBF919A008C2063 /* data.swift */; };
 		59C18E871DB00A0800DED5E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C18E861DB00A0800DED5E2 /* AppDelegate.swift */; };
 		59C18E891DB00A0800DED5E2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C18E881DB00A0800DED5E2 /* ViewController.swift */; };
 		59C18E8E1DB00A0900DED5E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59C18E8D1DB00A0900DED5E2 /* Assets.xcassets */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		59398F9F1DBF919A008C2063 /* data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = data.swift; sourceTree = "<group>"; };
 		59C18E831DB00A0800DED5E2 /* BotControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BotControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59C18E861DB00A0800DED5E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		59C18E881DB00A0800DED5E2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 		59C18EBF1DB95E8C00DED5E2 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				59398F9F1DBF919A008C2063 /* data.swift */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 				59C18EB81DB00A6E00DED5E2 /* BTService.swift in Sources */,
 				59C18EB61DB00A6500DED5E2 /* BTDiscovery.swift in Sources */,
 				59C18E871DB00A0800DED5E2 /* AppDelegate.swift in Sources */,
+				59398FA01DBF919A008C2063 /* data.swift in Sources */,
 				76B670EB1DBD4AAB00B350DF /* ParameterControl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -456,6 +460,7 @@
 		59C18EAC1DB00A0900DED5E2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = TH3ACB9272;
 				INFOPLIST_FILE = BotControl/Info.plist;
@@ -469,6 +474,7 @@
 		59C18EAD1DB00A0900DED5E2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = TH3ACB9272;
 				INFOPLIST_FILE = BotControl/Info.plist;

@@ -8,6 +8,8 @@
 
 import UIKit
 
+//let horizonShared = ArtificalHorizon()
+
 class ArtificalHorizon: UIView {
 
     private var imgHorizon : UIImage!
@@ -58,8 +60,9 @@ class ArtificalHorizon: UIView {
         
         // Figure out how much we need to scale the horizon image
         sf = screenWidth / imgHorizon.size.width
-        let horizonImgWidth = imgHorizon.size.width * sf
+        
         let horizonImgHeight = imgHorizon.size.height * sf
+        let horizonImgWidth = screenWidth
         
         imgViewHorizon = UIImageView(frame: CGRect(x: 0, y: 0, width: horizonImgWidth, height: horizonImgHeight))
         imgViewHorizon.contentMode = UIViewContentMode.scaleAspectFill
@@ -67,17 +70,17 @@ class ArtificalHorizon: UIView {
         imgViewHorizon.image = imgHorizon
         imgViewHorizon.backgroundColor = UIColor.red
         
-        imgViewBezel = UIImageView(frame: CGRect(x: 0, y: 0, width: screenWidth, height: screenWidth))
-        imgViewBezel.contentMode = UIViewContentMode.scaleAspectFill
+        imgViewBezel = UIImageView(frame: CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight))
+        imgViewBezel.contentMode = UIViewContentMode.scaleToFill
         imgViewBezel.clipsToBounds = true
         imgViewBezel.image = imgBezel
         
-        imgViewWings = UIImageView(frame: CGRect(x: 0, y: 0, width: screenWidth, height: screenWidth))
+        imgViewWings = UIImageView(frame: CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight))
         imgViewWings.contentMode = UIViewContentMode.center
         imgViewWings.clipsToBounds = true
         imgViewWings.image = imgWings
         
-        svHorizon = UIScrollView(frame: CGRect(x: 0, y: 0, width: screenWidth, height: screenWidth))
+        svHorizon = UIScrollView(frame: CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight))
         svHorizon.contentSize = CGSize(width: horizonImgWidth, height: horizonImgHeight)
         svHorizon.contentMode = UIViewContentMode.scaleAspectFill
         svHorizon.bounces = false
@@ -102,14 +105,4 @@ class ArtificalHorizon: UIView {
     func updateAngle(angle : Double){
         svHorizon.contentOffset.y = offsetForZeroAngle + CGFloat(angle * -4.0 * Double(sf))
     }
-    
- 
-    
-    /*
-    override func intrinsicContentSize() -> CGSize {
-        return CGSize(width: imgBezel.size.width, height: imgHorizon.size.height)
-    }
-    */
-
-
 }
