@@ -15,6 +15,9 @@ class ViewController: UIViewController {
     
     @IBOutlet var connectionStatusLabel: UILabel!
     @IBOutlet var artificialHorizon: ArtificalHorizon!
+    @IBOutlet var angTf: UITextField!
+    @IBOutlet var angDeltaTf: UITextField!
+    @IBOutlet var param_ZeroAng: ParameterControl!
     
     var timerTXDelay: Timer?
     var allowTX = true
@@ -23,6 +26,7 @@ class ViewController: UIViewController {
     var offset: CGFloat = 0
     
     var data: Data!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +42,9 @@ class ViewController: UIViewController {
         btDiscoverySharedInstance
 
         self.data = Data()
+        
+        
+
     }
     
     deinit {
@@ -49,6 +56,8 @@ class ViewController: UIViewController {
         super.viewWillDisappear(animated)
     }
     
+
+
     func connectionChanged(_ notification: Notification) {
         // Connection status changed. Indicate on GUI.
         let userInfo = (notification as NSNotification).userInfo as! [String: Bool]
